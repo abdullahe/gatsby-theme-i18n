@@ -1,0 +1,16 @@
+[
+  {
+    "code": "en",
+    "name": "English",
+    "localName": "English",
+    "langDir": "ltr",
+    "dateFormat": "MM/DD/YYYY"
+  },
+  {
+    "code": "de",
+    "name": "German",
+    "localName": "Deutsch",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY"
+  }
+]

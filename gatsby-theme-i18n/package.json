@@ -1,0 +1,16 @@
+{
+  "name": "gatsby-theme-i18n",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "LekoArts <lekoarts@gmail.com>",
+  "description": "The description for gatsby-theme-i18n will go here",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": ">=2.21.26",
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
+  },
+  "keywords": [
+    "i18n"
+  ]
+}
