@@ -1,8 +1,8 @@
-import React from "react"
-import { Root } from "./context"
+import * as React from "react"
+import { LocaleProvider } from "./context"
 
 const wrapPageElement = ({ element, props }) => (
-  <Root {...props}>{element}</Root>
+  <LocaleProvider {...props}>{element}</LocaleProvider>
 )
 
 export { wrapPageElement }
