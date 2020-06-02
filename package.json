@@ -6,8 +6,8 @@
   "author": "LekoArts <lekoarts@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "example",
-    "gatsby-theme-i18n"
+    "examples/**",
+    "packages/**"
   ],
   "scripts": {
     "format": "prettier \"**/*.{md,mdx,js,jsx}\" --write"

@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "default",
   "version": "1.0.0",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
@@ -12,11 +12,11 @@
     "clelop": "gatsby clean && rm -rf './src/i18n' && gatsby develop"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.1",
-    "@mdx-js/react": "^1.6.1",
-    "gatsby": "^2.21.17",
-    "gatsby-plugin-mdx": "^1.2.6",
-    "gatsby-source-filesystem": "^2.3.1",
+    "@mdx-js/mdx": "^1.6.5",
+    "@mdx-js/react": "^1.6.5",
+    "gatsby": "^2.22.16",
+    "gatsby-plugin-mdx": "^1.2.13",
+    "gatsby-source-filesystem": "^2.3.9",
     "gatsby-theme-i18n": "^0.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
