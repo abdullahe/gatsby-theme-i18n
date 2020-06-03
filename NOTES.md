@@ -4,6 +4,8 @@
 - Create a recipe adding this theme to a MD/MDX page
 - Add a benchmark site
 - `onCreatePage` logic could be generalized for more than MDX input (by user input: Providing a `node` function?)
+- Support for RSS feed
+- Support for client-only pages
 
 # Questions?
 
@@ -28,8 +30,8 @@
     code: "de", // Required
     name: "German", // Required
     localName: "Deutsch", // Required
-    langDir: "ltr",
-    dateFormat: "DD.MM.YYYY",
+    langDir: "ltr", // Required
+    dateFormat: "DD.MM.YYYY", // Required
   },
   {
     code: "ar",
@@ -43,8 +45,12 @@
 
 # Helper components
 
-- SEO
-- Link Wrapper
-- Current language
-- Default language
-- All languages
+- [ ] SEO
+  - General features
+  - JSON-LD schema stuff
+- [x] Link Wrapper
+- [ ] Language Dropdown (changes route)
+- [x] useLocalization hook
+    - Current language
+    - Default language
+    - All languages / config

@@ -1,12 +1,10 @@
-const defaultLang = require(`../utils/default-options`).defaultLang
-
-function isDefaultLang(locale) {
+function isDefaultLang(locale, defaultLang) {
   return locale === defaultLang
 }
 
-function localizedPath(locale, path) {
+function localizedPath(defaultLang, locale, path) {
   // The default language isn't prefixed
-  if (isDefaultLang(locale)) {
+  if (isDefaultLang(locale, defaultLang)) {
     return path
   }
 
@@ -25,5 +23,4 @@ function localizedPath(locale, path) {
 
 module.exports = {
   localizedPath,
-  isDefaultLang,
 }

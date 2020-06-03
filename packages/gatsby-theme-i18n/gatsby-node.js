@@ -68,6 +68,16 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type ThemeI18n implements Node {
       defaultLang: String
+      configPath: String
+      config: [Locale]
+    }
+    
+    type Locale {
+      code: String
+      dateFormat: String
+      langDir: String
+      localName: String
+      name: String
     }
   `)
 }
@@ -79,11 +89,11 @@ exports.sourceNodes = (
   const { createNode } = actions
 
   const options = withDefaults(themeOptions)
-  const locales = require(options.configPath)
+  const config = require(options.configPath)
 
   const configNode = {
     ...options,
-    locales,
+    config,
   }
 
   createNode({
@@ -119,7 +129,7 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 
 exports.onCreatePage = ({ page, actions }, themeOptions) => {
   const { createPage, deletePage } = actions
-  const { configPath } = withDefaults(themeOptions)
+  const { configPath, defaultLang } = withDefaults(themeOptions)
 
   deletePage(page)
 
@@ -128,7 +138,7 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
   locales.forEach(locale => {
     return createPage({
       ...page,
-      path: localizedPath(locale.code, page.path),
+      path: localizedPath(defaultLang, locale.code, page.path),
       context: {
         ...page.context,
         locale: locale.code,

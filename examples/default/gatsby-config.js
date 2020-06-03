@@ -14,6 +14,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
       options: {
