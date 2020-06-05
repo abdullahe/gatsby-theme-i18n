@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { LocalizedLink } from "gatsby-theme-i18n"
+import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 import Layout from "../components/layout"
 
 const Index = ({ data }) => {
@@ -23,6 +23,8 @@ const Index = ({ data }) => {
           </li>
         ))}
       </ul>
+      <h2>Overview of languages</h2>
+      <LocalesList />
     </Layout>
   )
 }
