@@ -30,7 +30,7 @@ const SEO = ({ location, pageContext }) => {
         if (l.code === defaultLang) {
           href = `${defaultSiteUrl}${pageContext.originalPath === withPrefix(`/`) ? `` : pageContext.originalPath}`
         } else {
-          href = `${defaultSiteUrl}/${l.code}${pageContext.originalPath}`
+          href = `${defaultSiteUrl}${withPrefix(`/${l.code}${pageContext.originalPath}`)}`
         }
 
         return (

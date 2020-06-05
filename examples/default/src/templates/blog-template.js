@@ -8,7 +8,11 @@ const BlogTemplate = ({ data, pageContext }) => {
     <Layout>
       <h1>Data</h1>
       <div>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        {data.mdx ? (
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        ) : (
+          <div>This page hasn't been translated yet</div>
+        )}
       </div>
       <h1>Context</h1>
       <pre>{JSON.stringify(pageContext, null, 2)}</pre>

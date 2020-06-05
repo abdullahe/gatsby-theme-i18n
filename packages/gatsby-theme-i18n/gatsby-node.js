@@ -133,7 +133,6 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
   const { configPath, defaultLang } = withDefaults(themeOptions)
   // Check if originalPath was already set and bail early as otherwise an infinite loop could occur
   // as other plugins like gatsby-plugin-mdx could modify this
-  console.log(page)
   if (page.context.originalPath) {
     return
   }
