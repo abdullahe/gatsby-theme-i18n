@@ -3,11 +3,6 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql, withPrefix } from "gatsby"
 import { useLocalization } from "../hooks/use-localization"
 
-// TODO:
-// - <link rel="alternate"> with all languages
-// - JSON-LD schema.org
-// -
-
 const SEO = ({ location, pageContext }) => {
   const { locale, config, defaultLang } = useLocalization()
   const data = useStaticQuery(graphql`
@@ -21,8 +16,6 @@ const SEO = ({ location, pageContext }) => {
   `)
   const defaultSiteUrl = data.site.siteMetadata.siteUrl
   const { pathname } = location
-  console.log({ location })
-  console.log({ originalPath: pageContext.originalPath })
 
   return (
     <Helmet>
@@ -46,7 +39,7 @@ const SEO = ({ location, pageContext }) => {
       })}
       <meta property="og:locale" content={pageContext.hrefLang.replace("-","_")} />
       {config.map(l => {
-        if (l.code === defaultLang) return null
+        if (l.code === locale) return null
         return (
           <meta key={l.code} property="og:locale:alternate" content={l.hrefLang.replace("-","_")} />
         )
