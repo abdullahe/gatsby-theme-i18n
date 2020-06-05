@@ -9,7 +9,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "clelop": "gatsby clean && rm -rf './src/i18n' && gatsby develop"
+    "clelop": "gatsby clean && rm -rf './src/i18n' && gatsby develop",
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.5",

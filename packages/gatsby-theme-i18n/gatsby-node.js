@@ -74,6 +74,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     
     type Locale {
       code: String
+      hrefLang: String
       dateFormat: String
       langDir: String
       localName: String
@@ -142,6 +143,7 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
       context: {
         ...page.context,
         locale: locale.code,
+        hrefLang: locale.hrefLang,
         dateFormat: locale.dateFormat,
       },
     })

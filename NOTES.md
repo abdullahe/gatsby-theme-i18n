@@ -29,6 +29,7 @@
   {
     code: "de", // Required
     name: "German", // Required
+    hrefLang: "de-DE", // Required
     localName: "Deutsch", // Required
     langDir: "ltr", // Required
     dateFormat: "DD.MM.YYYY", // Required
@@ -36,6 +37,7 @@
   {
     code: "ar",
     name: "Arabic",
+    hrefLang: "..",
     localName: "...",
     langDir: "rtl",
     dateFormat: "...",
@@ -51,6 +53,6 @@
 - [x] Link Wrapper
 - [ ] Language Dropdown (changes route)
 - [x] useLocalization hook
-    - Current language
-    - Default language
-    - All languages / config
+  - Current language
+  - Default language
+  - All languages / config

@@ -12,6 +12,7 @@ const useLocalization = () => {
         defaultLang
         config {
           code
+          hrefLang
           dateFormat
           langDir
           localName

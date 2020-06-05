@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://gatsby-theme-i18n.netlify.app`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

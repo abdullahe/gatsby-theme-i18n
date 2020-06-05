@@ -1,6 +1,7 @@
 [
   {
     "code": "en",
+    "hrefLang": "en-US",
     "name": "English",
     "localName": "English",
     "langDir": "ltr",
@@ -8,6 +9,7 @@
   },
   {
     "code": "de",
+    "hrefLang": "de-DE",
     "name": "German",
     "localName": "Deutsch",
     "langDir": "ltr",
