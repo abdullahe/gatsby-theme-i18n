@@ -131,6 +131,13 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 exports.onCreatePage = ({ page, actions }, themeOptions) => {
   const { createPage, deletePage } = actions
   const { configPath, defaultLang } = withDefaults(themeOptions)
+  // Check if originalPath was already set and bail early as otherwise an infinite loop could occur
+  // as other plugins like gatsby-plugin-mdx could modify this
+  console.log(page)
+  if (page.context.originalPath) {
+    return
+  }
+  const originalPath = page.path
 
   deletePage(page)
 
@@ -144,6 +151,7 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
         ...page.context,
         locale: locale.code,
         hrefLang: locale.hrefLang,
+        originalPath,
         dateFormat: locale.dateFormat,
       },
     })

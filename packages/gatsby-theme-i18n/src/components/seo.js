@@ -21,15 +21,29 @@ const SEO = ({ location, pageContext }) => {
   `)
   const defaultSiteUrl = data.site.siteMetadata.siteUrl
   const { pathname } = location
-  console.log({ pathname })
-  const [, base, slug] = pathname.split(`/`)
-  console.log({ base, slug })
+  console.log({ location })
+  console.log({ originalPath: pageContext.originalPath })
 
   return (
     <Helmet>
       <html lang={locale} />
       <link rel="alternate" hrefLang="x-default" href={defaultSiteUrl} />
       <link rel="alternate" hrefLang={pageContext.hrefLang} href={`${defaultSiteUrl}${pathname === withPrefix(`/`) ? `` : pathname}`} />
+      {config.map(l => {
+        let href
+
+        if (l.code === locale) return null
+
+        if (l.code === defaultLang) {
+          href = `${defaultSiteUrl}${pageContext.originalPath === withPrefix(`/`) ? `` : pageContext.originalPath}`
+        } else {
+          href = `${defaultSiteUrl}/${l.code}${pageContext.originalPath}`
+        }
+
+        return (
+          <link key={l.code} rel="alternate" hrefLang={l.hrefLang} href={href} />
+        )
+      })}
       <meta property="og:locale" content={pageContext.hrefLang.replace("-","_")} />
       {config.map(l => {
         if (l.code === defaultLang) return null

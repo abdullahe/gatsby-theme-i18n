@@ -9,7 +9,10 @@ const Index = ({ data }) => {
       <h1>Hello World</h1>
       <p>This is in the Index page.</p>
       <p>
-        <LocalizedLink to="/page-2">Link to second page</LocalizedLink>
+        <LocalizedLink to="/page-2/">Link to second page</LocalizedLink>
+      </p>
+      <p>
+        <LocalizedLink to="/page-3/">Link to third page</LocalizedLink>
       </p>
       <ul>
         {data.allFile.nodes.map(({ childMdx: node }) => (
