@@ -37,6 +37,7 @@ exports.onPreBootstrap = ({ reporter, store }, themeOptions) => {
   const defaultContent = [
     {
       code: "en",
+      hrefLang: "en-US",
       name: "English",
       localName: "English",
       langDir: "ltr",
