@@ -4,6 +4,6 @@ module.exports = themeOptions => {
   const options = withDefaults(themeOptions)
 
   return {
-    plugins: [],
+    plugins: [`gatsby-plugin-react-helmet`],
   }
 }

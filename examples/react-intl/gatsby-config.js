@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://gatsby-theme-i18n.netlify.app`,
-    title: "gatsby-theme-i18n",
-    description: `Default example for i18n`,
+    siteUrl: `https://gatsby-theme-i18n-react-intl.netlify.app`,
+    title: "gatsby-theme-i18n-react-intl",
+    description: `Default example for i18n with react-intl`,
     author: `LekoArts`,
   },
   plugins: [
@@ -20,12 +20,17 @@ module.exports = {
         name: `blog`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: `en`,
         configPath: require.resolve(`./i18n/config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./i18n/react-intl/en.json`,
       },
     },
     {

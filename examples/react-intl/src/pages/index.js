@@ -1,20 +1,26 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
+import { useIntl } from "gatsby-theme-i18n-react-intl"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 const Index = ({ data }) => {
+  const intl = useIntl()
   return (
     <Layout>
-      <SEO title="Home" />
-      <h1>Hello World</h1>
-      <p>This is in the Index page.</p>
+      <SEO title={intl.formatMessage({ id: "home" })} />
+      <h1>{intl.formatMessage({ id: "helloWorld" })}</h1>
+      <p>{intl.formatMessage({ id: "indexNote" })}</p>
       <p>
-        <LocalizedLink to="/page-2/">Link to second page</LocalizedLink>
+        <LocalizedLink to="/page-2/">
+          {intl.formatMessage({ id: "secondPageLink" })}
+        </LocalizedLink>
       </p>
       <p>
-        <LocalizedLink to="/page-3/">Link to third page</LocalizedLink>
+        <LocalizedLink to="/page-3/">
+          {intl.formatMessage({ id: "thirdPageLink" })}
+        </LocalizedLink>
       </p>
       <ul>
         {data.allFile.nodes.map(({ childMdx: node }) => (
@@ -25,7 +31,7 @@ const Index = ({ data }) => {
           </li>
         ))}
       </ul>
-      <h2>Overview of languages</h2>
+      <h2>{intl.formatMessage({ id: "overviewLang" })}</h2>
       <LocalesList />
     </Layout>
   )

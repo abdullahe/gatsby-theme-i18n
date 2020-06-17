@@ -1,13 +1,12 @@
 {
-  "name": "gatsby-theme-i18n",
+  "name": "gatsby-theme-i18n-react-intl",
   "version": "0.0.1",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
-  "description": "The description for gatsby-theme-i18n will go here",
+  "description": "The description for gatsby-theme-i18n-react-intl will go here",
   "license": "MIT",
   "dependencies": {
-    "gatsby-plugin-react-helmet": "^3.3.4",
-    "react-helmet": "^6.1.0"
+    "react-intl": "^4.6.9"
   },
   "peerDependencies": {
     "gatsby": ">=2.21.26",

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useLocalization } from '../hooks/use-localization'
+import { useLocalization } from "../hooks/use-localization"
 
 const LocalesList = () => {
   const { config } = useLocalization()

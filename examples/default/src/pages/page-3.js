@@ -1,12 +1,14 @@
 import * as React from "react"
 import { LocalizedLink } from "gatsby-theme-i18n"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Page3 = () => {
   return (
     <Layout>
+      <SEO title="Page 3" />
       <h1>Third page</h1>
-      <p>This is in the Page 3 page.</p>
+      <p>This is the third page.</p>
       <p>
         <LocalizedLink to="/page-2/">Link to second page</LocalizedLink>
       </p>
