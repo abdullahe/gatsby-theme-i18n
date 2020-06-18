@@ -3,8 +3,9 @@ import { Link } from "gatsby"
 import { localizedPath } from "../helpers"
 import { useLocalization } from "../hooks/use-localization"
 
-export const LocalizedLink = ({ to, ...props }) => {
+export const LocalizedLink = ({ to, language, ...props }) => {
   const { defaultLang, locale } = useLocalization()
+  const linkLocale = language || locale
 
-  return <Link {...props} to={localizedPath(defaultLang, locale, to)} />
+  return <Link {...props} to={localizedPath(defaultLang, linkLocale, to)} />
 }
