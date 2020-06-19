@@ -1,26 +1,22 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { useTranslation } from "react-i18next"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
-import { useIntl } from "gatsby-theme-i18n-react-intl"
 import Layout from "../components/layout"
-import SEO from '../components/seo'
+import SEO from "../components/seo"
 
 const Index = ({ data }) => {
-  const intl = useIntl()
+  const { t } = useTranslation()
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "home" })} />
-      <h1>{intl.formatMessage({ id: "helloWorld" })}</h1>
-      <p>{intl.formatMessage({ id: "indexNote" })}</p>
+      <SEO title={t("home")} />
+      <h1>{t("helloWorld")}</h1>
+      <p>{t("indexNote")}</p>
       <p>
-        <LocalizedLink to="/page-2/">
-          {intl.formatMessage({ id: "secondPageLink" })}
-        </LocalizedLink>
+        <LocalizedLink to="/page-2/">{t("secondPageLink")}</LocalizedLink>
       </p>
       <p>
-        <LocalizedLink to="/page-3/">
-          {intl.formatMessage({ id: "thirdPageLink" })}
-        </LocalizedLink>
+        <LocalizedLink to="/page-3/">{t("thirdPageLink")}</LocalizedLink>
       </p>
       <ul>
         {data.allFile.nodes.map(({ childMdx: node }) => (
@@ -31,7 +27,7 @@ const Index = ({ data }) => {
           </li>
         ))}
       </ul>
-      <h2>{intl.formatMessage({ id: "overviewLang" })}</h2>
+      <h2>{t("overviewLang")}</h2>
       <LocalesList />
     </Layout>
   )

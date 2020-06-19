@@ -1,1 +1,1 @@
-export * from "react-intl"
+// noop

@@ -1,5 +1,5 @@
 {
-  "name": "react-intl",
+  "name": "example-react-intl",
   "version": "1.0.0",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
@@ -21,6 +21,7 @@
     "gatsby-theme-i18n": "^0.0.1",
     "gatsby-theme-i18n-react-intl": "^0.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-intl": "^4.6.9"
   }
 }

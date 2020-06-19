@@ -48,8 +48,8 @@
 # Helper components
 
 - [ ] SEO
-  - General features
-  - JSON-LD schema stuff
+  - [x] General features
+  - [ ] JSON-LD schema stuff
 - [x] Link Wrapper
 - [ ] Language Dropdown (changes route)
 - [x] useLocalization hook

@@ -1,18 +1,20 @@
 {
-  "name": "gatsby-theme-i18n-react-intl",
+  "name": "gatsby-theme-i18n-react-i18next",
   "version": "0.0.1",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
-  "description": "The description for gatsby-theme-i18n-react-intl will go here",
+  "description": "The description for gatsby-theme-i18n-react-i18next will go here",
   "license": "MIT",
   "devDependencies": {
-    "react-intl": "^4.6.9"
+    "i18next": "^19.4.5",
+    "react-i18next": "^11.6.0"
   },
   "peerDependencies": {
     "gatsby": ">=2.21.26",
+    "i18next": "^19.4.5",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1",
-    "react-intl": "^4.6.9"
+    "react-i18next": "^11.6.0"
   },
   "keywords": [
     "i18n"
