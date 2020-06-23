@@ -74,3 +74,6 @@ cypress/videos
 cypress/screenshots
 
 junit.xml
+
+examples/example-lingui/i18n/lingui/**/messages.js
+examples/example-lingui/i18n/lingui/_build
