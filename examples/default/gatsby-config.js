@@ -1,3 +1,7 @@
+require(`dotenv`).config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://gatsby-theme-i18n.netlify.app`,
@@ -25,6 +29,7 @@ module.exports = {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: `en`,
+        locales: process.env.LOCALES,
         configPath: require.resolve(`./i18n/config.json`),
       },
     },

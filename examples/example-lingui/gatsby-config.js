@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://gatsby-theme-i18n.netlify.app`,
-    title: "gatsby-theme-i18n",
-    description: `Default example for i18n`,
+    siteUrl: `https://gatsby-theme-i18n-lingui.netlify.app`,
+    title: "gatsby-theme-i18n-lingui",
+    description: `Default example for i18n with LinguiJS`,
     author: `LekoArts`,
   },
   plugins: [

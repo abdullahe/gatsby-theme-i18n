@@ -5,6 +5,7 @@ function withDefaults(themeOptions) {
     ...themeOptions,
     configPath: themeOptions.configPath,
     defaultLang: themeOptions.defaultLang || defaultLang,
+    locales: themeOptions.locales || null,
   }
 }
 

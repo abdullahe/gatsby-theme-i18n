@@ -21,6 +21,31 @@ function localizedPath(defaultLang, locale, path) {
   return `/${locale}${path}`
 }
 
+function getLanguages(defaultLang, locales, localeStr) {
+  // If "localeStr" is not defined, return the list of locales from the i18n config file
+  if (!localeStr) {
+    return locales
+  }
+
+  const langCodes = localeStr.split(" ")
+  const langs = []
+
+  for (let code of langCodes) {
+    const lang = locales.find(lang => lang.code === code)
+
+    if (!lang) {
+      throw new Error(
+        `Invalid localed provided: ${code}. See your i18n config file for a list of available locales.`
+      )
+    }
+
+    langs.push(lang)
+  }
+
+  return langs
+}
+
 module.exports = {
   localizedPath,
+  getLanguages,
 }

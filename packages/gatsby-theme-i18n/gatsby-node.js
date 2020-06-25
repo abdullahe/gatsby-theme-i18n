@@ -1,8 +1,8 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const withDefaults = require(`./utils/default-options`).withDefaults
-const { localizedPath } = require(`./src/helpers`)
+const { withDefaults } = require(`./utils/default-options`)
+const { localizedPath, getLanguages } = require(`./src/helpers`)
 
 function writeFile(filePath, data, reporter) {
   // Check if config file already exists
@@ -131,7 +131,7 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 
 exports.onCreatePage = ({ page, actions }, themeOptions) => {
   const { createPage, deletePage } = actions
-  const { configPath, defaultLang } = withDefaults(themeOptions)
+  const { configPath, defaultLang, locales } = withDefaults(themeOptions)
   // Check if originalPath was already set and bail early as otherwise an infinite loop could occur
   // as other plugins like gatsby-plugin-mdx could modify this
   if (page.context.originalPath) {
@@ -141,9 +141,11 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
 
   deletePage(page)
 
-  const locales = require(configPath)
+  const configLocales = require(configPath)
 
-  locales.forEach(locale => {
+  const languages = getLanguages(defaultLang, configLocales, locales)
+
+  languages.forEach(locale => {
     return createPage({
       ...page,
       path: localizedPath(defaultLang, locale.code, page.path),
