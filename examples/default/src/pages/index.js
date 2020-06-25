@@ -17,10 +17,14 @@ const Index = ({ data }) => {
         <LocalizedLink to="/page-3/">Link to third page</LocalizedLink>
       </p>
       <p>
-        <LocalizedLink to="/page-2/" language="de">Link to second page (german version)</LocalizedLink>
+        <LocalizedLink to="/page-2/" language="de">
+          Link to second page (german version)
+        </LocalizedLink>
       </p>
       <p>
-        <LocalizedLink to="/" language="en">Link to index page (english version)</LocalizedLink>
+        <LocalizedLink to="/" language="en">
+          Link to index page (english version)
+        </LocalizedLink>
       </p>
       <ul>
         {data.allFile.nodes.map(({ childMdx: node }) => (

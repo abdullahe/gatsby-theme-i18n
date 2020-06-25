@@ -28,9 +28,7 @@ exports.onCreateWebpackConfig = ({ actions, plugins }) => {
   actions.setWebpackConfig({
     plugins: [
       plugins.define({
-        GATSBY_THEME_I18N_LINGUI: JSON.stringify(
-          absoluteLocalesDirectory
-        ),
+        GATSBY_THEME_I18N_LINGUI: JSON.stringify(absoluteLocalesDirectory),
       }),
     ],
   })
